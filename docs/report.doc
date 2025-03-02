@@ -1,0 +1,61 @@
+**# AI-Powered Bug Detection and Auto-Fix Tool for C++**
+
+## **1. Project Overview**
+### **Objective**
+This project aims to develop an AI-powered bug detection and auto-fix tool for C++ programs. The tool utilizes **machine learning models** trained on C++ code snippets to classify and detect common bug types (e.g., memory leaks, buffer overflows). It provides **suggested fixes** and features a **command-line interface (CLI)** and **graphical user interface (GUI)** for seamless user interaction.
+
+### **Technologies Used**
+- **Programming Language:** Python (Flask for GUI, PyTorch/Scikit-learn for ML, Clang Static Analyzer for feature extraction)
+- **ML Models:** Random Forest, XGBoost, or fine-tuned GPT-based models
+- **Frontend:** HTML, CSS, Bootstrap (for Flask-based GUI)
+- **Backend:** Flask API
+- **Environment:** Virtual environment with Python 3.12
+- **Deployment:** Local Flask server with potential extension to cloud deployment
+
+---
+## **2. Project Workflow**
+### **Step 1: Data Collection & Preprocessing**
+- Collected C++ code snippets with known bugs from open-source repositories.
+- Used Clang Static Analyzer to extract meaningful features (e.g., AST, CFG representations).
+- Cleaned and labeled datasets for supervised learning.
+- Converted code into vectorized form using **TF-IDF** and **word embeddings**.
+
+### **Step 2: Model Training & Evaluation**
+- Implemented multiple models (**Random Forest, XGBoost, fine-tuned GPT**) for bug classification.
+- Trained models on labeled data and saved the best-performing model in `models/`.
+- **Evaluation Metrics:** Accuracy, Precision, Recall, F1-score.
+- Saved the trained model and vectorizer for inference.
+
+### **Step 3: CLI Tool Development**
+- Developed a command-line tool to analyze C++ files:
+  ```sh
+  python -m cli.main test.cpp
+  ```
+- **Example Output:**
+  ```
+  Bug Type: Memory Leak
+  Suggested Fix: delete[] ptr;
+  ```
+- Ensured lightweight execution with minimal dependencies.
+
+### **Step 4: GUI Development (Flask-Based Web App)**
+- Built a Flask-based **web interface** for bug detection.
+- Integrated the trained model into Flask backend.
+- Designed a simple HTML/CSS interface for file uploads and result visualization.
+
+### **Step 5: Testing & Debugging**
+- **Test Cases:** Checked various C++ code snippets for known and unknown bug patterns.
+- **Common Errors Fixed:** Jinja2 syntax errors, file path issues, Flask template loading problems.
+- Debugged the issue where Jinja2 `{% comment %}` was incorrectly used instead of `{# ... #}`.
+
+### **Step 6: Deployment & Future Enhancements**
+- Deployed the tool locally via Flask.
+- Future enhancements:
+  - Deploy as a **VS Code extension** for real-time bug detection.
+  - Integrate with a cloud-based API for scalable performance.
+  - Expand bug classification with **deep learning models** for improved accuracy.
+
+---
+## **3. Conclusion**
+This AI-powered C++ bug detection tool successfully identifies and suggests fixes for common coding errors. The **CLI and GUI interfaces** provide flexibility for different users, and the ML model ensures intelligent error classification. Future iterations will enhance performance and integrate with IDEs for real-time bug prevention.
+
