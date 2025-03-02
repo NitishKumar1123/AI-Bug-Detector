@@ -2,6 +2,8 @@
 
 ## Overview
 This project is an AI-powered tool designed to detect and fix bugs in C++ code automatically. It leverages machine learning models trained on C++ code snippets to identify common errors such as memory leaks, buffer overflows, and uninitialized variables. The tool provides suggested fixes and supports both a **Command-Line Interface (CLI)** and a **Graphical User Interface (GUI)**.
+![image](https://github.com/user-attachments/assets/20ac6acf-eb07-409a-af9f-616f7b4b6590)
+![image](https://github.com/user-attachments/assets/8989b746-2df9-46b2-8554-1d218666381d)
 
 ## Features
 - **Automated Bug Detection**: Uses AI models to classify and detect common C++ bugs.
